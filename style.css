@@ -1,0 +1,210 @@
+/* ================================
+   GLOBAL THEME VARIABLES
+================================ */
+:root {
+  --bg: #eef2f7;
+  --text: #1a1d29;
+
+  --card-bg: #ffffff;
+  --card-border: rgba(0,0,0,0.08);
+
+  --primary: #4A8FE7;
+  --primary-hover: #3276c7;
+
+  --danger: #ff4d4d;
+
+  --green: #3cd278;
+
+  --shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+/* DARK MODE */
+body.dark {
+  --bg: #0d1220;
+  --text: #e8eeff;
+
+  --card-bg: #161b2c;
+  --card-border: rgba(255,255,255,0.1);
+  --shadow: 0 8px 24px rgba(0,0,0,0.45);
+}
+
+/* ================================
+   GENERAL LAYOUT
+================================ */
+body {
+  margin: 0;
+  padding: 30px;
+  background: var(--bg);
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+  transition: 0.3s;
+}
+
+/* CARD CONTAINER */
+.card {
+  max-width: 800px;
+  margin: auto;
+  padding: 28px;
+  background: var(--card-bg);
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow);
+}
+
+/* TITLES */
+h1, h2 {
+  margin-top: 0;
+}
+
+/* ================================
+   BUTTONS
+================================ */
+.btn {
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s;
+  font-weight: 600;
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: white;
+}
+.btn.primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn.warn {
+  background: var(--danger);
+  color: white;
+}
+
+.btn.success {
+  background: var(--green);
+  color: white;
+}
+
+/* ================================
+   QUESTION CARD
+================================ */
+.qcard {
+  padding: 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+/* OPTIONS */
+.options label {
+  display: block;
+  padding: 12px;
+  margin-bottom: 10px;
+  background: rgba(0,0,0,0.04);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+body.dark .options label {
+  background: rgba(255,255,255,0.07);
+}
+
+.options label:hover {
+  transform: translateX(6px);
+}
+
+/* ================================
+   BREAKDOWN ROWS
+================================ */
+.row {
+  padding: 14px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  border: 1px solid var(--card-border);
+  display: flex;
+  gap: 12px;
+}
+
+.row.correct {
+  background: rgba(60,210,120,0.2);
+}
+.row.wrong {
+  background: rgba(255,77,77,0.2);
+}
+
+.idx {
+  width: 38px;
+  height: 38px;
+  background: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+}
+
+/* ================================
+   THEME SWITCH
+================================ */
+.theme-toggle {
+  position: fixed;
+  right: 30px;
+  top: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.switch input { display: none; }
+.switch .slider {
+  width: 50px;
+  height: 26px;
+  border-radius: 30px;
+  background: #aaa;
+  position: relative;
+  cursor: pointer;
+}
+.slider:before {
+  content: "";
+  width: 22px;
+  height: 22px;
+  background: white;
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+input:checked + .slider {
+  background: var(--primary);
+}
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* ================================
+   PROGRESS BAR
+================================ */
+.progress {
+  width: 100%;
+  background: rgba(0,0,0,0.1);
+  height: 12px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+body.dark .progress {
+  background: rgba(255,255,255,0.1);
+}
+
+#progressBar {
+  height: 100%;
+  width: 0;
+  background: var(--primary);
+  border-radius: 10px;
+  transition: 0.3s;
+}

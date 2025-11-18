@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IQ Test - Questions</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="theme-toggle">
+  <span>🌞</span>
+  <label class="switch">
+    <input type="checkbox" id="themeSwitch">
+    <span class="slider"></span>
+  </label>
+  <span>🌙</span>
+</div>
+
+<section class="card fade fade-up">
+
+  <div class="topbar">
+    <div class="timer">⏳ Time: <span id="time">10:00</span></div>
+    <div class="progress"><div id="progressBar"></div></div>
+  </div>
+
+  <div id="questionBox"></div>
+
+  <div class="nav">
+    <button id="prevQ" class="btn">Previous</button>
+    <button id="nextQ" class="btn">Next</button>
+    <button id="finishQ" class="btn warn">Finish</button>
+  </div>
+
+</section>
+
+<script src="script.js"></script>
+<script>
+  startTestPage();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your IQ Result</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="theme-toggle">
+  <span>🌞</span>
+  <label class="switch">
+    <input type="checkbox" id="themeSwitch">
+    <span class="slider"></span>
+  </label>
+  <span>🌙</span>
+</div>
+
+<section class="card fade fade-up" id="pdf-area">
+
+  <h1>🎉 Your IQ Test Result</h1>
+
+  <div id="summary" class="summary"></div>
+
+  <h3>Detailed Breakdown</h3>
+  <div id="breakdown"></div>
+
+</section>
+
+<div style="text-align:center; margin-top:20px">
+  <button onclick="window.location='index.html'" class="btn primary">Retake Test</button>
+  <button id="pdfBtn" class="btn success">Download as PDF</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+<script src="script.js"></script>
+<script>
+  loadResultPage();
+
+  document.getElementById("pdfBtn").addEventListener("click", () => {
+      const element = document.getElementById("pdf-area");
+      html2pdf().from(element).save("IQ_Result.pdf");
+  });
+</script>
+
+</body>
+</html>
